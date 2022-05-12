@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const navigation = [
@@ -6,7 +7,7 @@ const navigation = [
   { name: 'Community', href: '#' },
 ];
 
-const Sidebar = () => {
+const Navbar = () => {
   return (
     <header className="bg-wagpay-dark pb-4 lg:pb-0">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -29,12 +30,11 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="ml-10 space-x-4">
-            <a
-              href="#"
-              className="inline-block rounded-full border border-transparent bg-gray-700 py-2 px-4 text-base font-medium text-white"
-            >
-              Swap Here
-            </a>
+            <Link href="/swap">
+              <a className="inline-block rounded-full border border-transparent bg-gray-700 py-2 px-4 text-base font-medium text-white">
+                Swap Here
+              </a>
+            </Link>
             <a
               href="#"
               className="hidden rounded-full border border-transparent bg-white py-2 px-4 text-base font-medium text-wagpay-dark hover:bg-indigo-50 md:inline-block"
@@ -63,4 +63,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;
