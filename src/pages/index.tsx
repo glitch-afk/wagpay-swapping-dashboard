@@ -17,7 +17,7 @@ const Index = () => {
     >
       <Navbar />
       <Hero>
-        <main className="relative h-fit pt-24 pb-6 lg:mb-0">
+        <main className="relative h-fit pt-24 pb-12 lg:mb-0">
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="flex flex-col items-center justify-center space-y-8 sm:px-6 sm:text-center md:mx-auto md:max-w-5xl md:items-start lg:col-span-6 lg:flex lg:items-center lg:text-left">

@@ -9,7 +9,7 @@ const Hero = (props: IMainProps) => {
   return (
     <div className="relative">
       {props.children}
-      <div className="absolute inset-x-0 top-4 lg:inset-x-auto lg:inset-y-1/2 lg:right-4">
+      <div className="absolute inset-x-0 bottom-0 lg:inset-x-auto lg:inset-y-1/2 lg:right-4">
         <div className="flex items-center justify-center space-x-4 lg:flex-col lg:space-x-0 lg:space-y-4">
           <div className="h-[1px] w-12 bg-gray-400 lg:h-12 lg:w-[1px]" />
           <svg

@@ -13,10 +13,12 @@ const Navbar = () => {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between border-b border-wagpay-dark py-6 lg:border-none">
           <div className="flex items-center">
-            <a href="#">
-              <span className="sr-only">Wagpay</span>
-              <h2 className="text-3xl font-bold text-white">Wagpay.</h2>
-            </a>
+            <Link href="/">
+              <a>
+                <span className="sr-only">Wagpay</span>
+                <h2 className="text-3xl font-bold text-white">Wagpay.</h2>
+              </a>
+            </Link>
             <div className="ml-10 hidden space-x-8 lg:block">
               {navigation.map((item) => (
                 <a
