@@ -1,13 +1,13 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Navbar2 from '@/components/Navbar2';
 import { Hero } from '@/layouts/Hero';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
-import Toggle from '@/utils/toggle';
 
 const Swap = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <Main
       meta={
@@ -20,7 +20,7 @@ const Swap = () => {
       <Navbar2 />
       <Hero>
         <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-          <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md lg:mt-12">
             <div className="mx-4 rounded-lg bg-wagpay-dark py-8 px-4 shadow sm:px-6">
               {/* card starts here */}
               <div className="grid grid-cols-7 place-content-center gap-y-6 sm:grid-cols-7 sm:gap-y-0 sm:gap-x-2">
@@ -34,7 +34,7 @@ const Swap = () => {
                   <select
                     id="sender"
                     name="sender"
-                    className="mt-2 block w-full rounded-md border border-gray-200 bg-transparent p-2 text-white shadow-sm sm:text-sm"
+                    className="common-select w-full rounded-md"
                   >
                     <option className="bg-wagpay-dark">Polygon</option>
                     <option className="bg-wagpay-dark">USDC</option>
@@ -75,7 +75,7 @@ const Swap = () => {
                   <select
                     id="sender"
                     name="sender"
-                    className="mt-2 block w-full rounded-md border border-gray-200 bg-transparent p-2 text-white shadow-sm sm:text-sm"
+                    className="common-select w-full rounded-md"
                   >
                     <option className="bg-wagpay-dark">USDC</option>
                     <option className="bg-wagpay-dark">Polygon</option>
@@ -97,16 +97,16 @@ const Swap = () => {
                       <input
                         type="number"
                         placeholder="0.00"
-                        className="mt-2 block w-full rounded-l-md border border-r-0 border-gray-200 bg-transparent p-2 text-white shadow-sm focus:outline-none sm:text-sm"
+                        className="mt-2 block w-full rounded-l-md border border-r-0 border-gray-200 bg-gray-700 p-2 text-white shadow-sm focus:outline-none sm:text-sm"
                       />
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                      <div className="pointer-events-none absolute inset-y-0 right-0 mt-1 flex items-center pr-3">
                         <span className="text-xs text-gray-300">MAX</span>
                       </div>
                     </div>
                     <select
                       id="sender"
                       name="sender"
-                      className="mt-2 block w-1/4 rounded-r-md border border-gray-200 bg-transparent p-1 text-white shadow-sm sm:text-sm"
+                      className="common-select w-1/4 rounded-r-md"
                     >
                       <option className="bg-wagpay-dark">USDC</option>
                       <option className="bg-wagpay-dark">Polygon</option>
@@ -129,16 +129,16 @@ const Swap = () => {
                       <input
                         type="number"
                         placeholder="0.00"
-                        className="mt-2 block w-full rounded-l-md border border-r-0 border-gray-200 bg-transparent p-2 text-white shadow-sm focus:outline-none sm:text-sm"
+                        className="mt-2 block w-full rounded-l-md border border-r-0 border-gray-200 bg-gray-700 p-2 text-white shadow-sm focus:outline-none sm:text-sm"
                       />
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                      <div className="pointer-events-none absolute inset-y-0 right-0 mt-1 flex items-center pr-3">
                         <span className="text-xs text-gray-300">MAX</span>
                       </div>
                     </div>
                     <select
                       id="sender"
                       name="sender"
-                      className="mt-2 block w-1/4 rounded-r-md border border-gray-200 bg-transparent p-1 text-white shadow-sm sm:text-sm"
+                      className="common-select w-1/4 rounded-r-md"
                     >
                       <option className="bg-wagpay-dark">USDC</option>
                       <option className="bg-wagpay-dark">Polygon</option>
@@ -153,9 +153,62 @@ const Swap = () => {
                     Select bridge Automatically
                   </span>
                   <div>
-                    <Toggle />
+                    {/* Start */}
+                    <div className="flex items-center">
+                      <div className="mr-2 text-sm italic text-gray-400">
+                        {toggle ? 'On' : 'Off'}
+                      </div>
+                      <div className="form-switch">
+                        <input
+                          type="checkbox"
+                          id="switch"
+                          className="sr-only"
+                          checked={toggle}
+                          onChange={() => setToggle(!toggle)}
+                        />
+                        <label className="bg-gray-400" htmlFor="switch">
+                          <span
+                            className="bg-white shadow-sm"
+                            aria-hidden="true"
+                          ></span>
+                          <span className="sr-only">Switch label</span>
+                        </label>
+                      </div>
+                    </div>
+                    {/* End */}
                   </div>
                 </div>
+                {/* priority section */}
+                <div className="col-span-7 mt-1 sm:mt-3 md:mt-6">
+                  <span className="text-base text-gray-200">
+                    Give priority to :
+                  </span>
+                  <div className="mt-4 flex space-x-6">
+                    <div>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="radio-buttons"
+                          className="form-radio"
+                        />
+                        <span className="ml-2 text-sm text-white">
+                          Gas Fees
+                        </span>
+                      </label>
+                    </div>
+                    <div>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          name="radio-buttons"
+                          className="form-radio"
+                        />
+                        <span className="ml-2 text-sm text-white">Time</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                {/* priority end */}
                 {/* connect wallet button */}
                 <ConnectButton.Custom>
                   {({
