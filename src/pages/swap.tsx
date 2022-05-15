@@ -1,6 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import React, { useState } from 'react';
 
+import ChainSelect from '@/components/ChainSelect';
 import Navbar2 from '@/components/Navbar2';
 import { Hero } from '@/layouts/Hero';
 import { Meta } from '@/layouts/Meta';
@@ -25,23 +26,12 @@ const Swap = () => {
               {/* card starts here */}
               <div className="grid grid-cols-7 place-content-center gap-y-6 sm:grid-cols-7 sm:gap-y-0 sm:gap-x-2">
                 <div className="col-span-3">
-                  <label
-                    htmlFor="from"
-                    className="block text-sm font-medium text-white"
-                  >
-                    From
-                  </label>
-                  <select
-                    id="sender"
-                    name="sender"
-                    className="common-select w-full rounded-md"
-                  >
-                    <option className="bg-wagpay-dark">Polygon</option>
-                    <option className="bg-wagpay-dark">USDC</option>
-                    <option className="bg-wagpay-dark">Ethereum</option>
-                    <option className="bg-wagpay-dark">Avalanche</option>
-                    <option className="bg-wagpay-dark">BNB</option>
-                  </select>
+                  <ChainSelect
+                    label="From"
+                    classes="w-full rounded-md"
+                    selectId="from"
+                    selectName="from"
+                  />
                 </div>
                 <div className="col-span-1 mt-8  place-self-center sm:block">
                   <svg
@@ -66,23 +56,12 @@ const Swap = () => {
                   </svg>
                 </div>
                 <div className="col-span-3">
-                  <label
-                    htmlFor="to"
-                    className="block text-sm font-medium text-white"
-                  >
-                    To
-                  </label>
-                  <select
-                    id="sender"
-                    name="sender"
-                    className="common-select w-full rounded-md"
-                  >
-                    <option className="bg-wagpay-dark">USDC</option>
-                    <option className="bg-wagpay-dark">Polygon</option>
-                    <option className="bg-wagpay-dark">Ethereum</option>
-                    <option className="bg-wagpay-dark">Avalanche</option>
-                    <option className="bg-wagpay-dark">BNB</option>
-                  </select>
+                  <ChainSelect
+                    label="To"
+                    classes="w-full rounded-md"
+                    selectId="to"
+                    selectName="to"
+                  />
                 </div>
                 {/* you send section */}
                 <div className="col-span-7 mt-4 sm:mt-7">
@@ -93,7 +72,7 @@ const Swap = () => {
                     You Send
                   </label>
                   <div className="flex w-full">
-                    <div className="relative  w-3/4 rounded-md shadow-sm">
+                    <div className="relative w-3/4 rounded-md shadow-sm">
                       <input
                         type="number"
                         placeholder="0.00"
@@ -103,17 +82,11 @@ const Swap = () => {
                         <span className="text-xs text-gray-300">MAX</span>
                       </div>
                     </div>
-                    <select
-                      id="sender"
-                      name="sender"
-                      className="common-select w-1/4 rounded-r-md"
-                    >
-                      <option className="bg-wagpay-dark">USDC</option>
-                      <option className="bg-wagpay-dark">Polygon</option>
-                      <option className="bg-wagpay-dark">Ethereum</option>
-                      <option className="bg-wagpay-dark">Avalanche</option>
-                      <option className="bg-wagpay-dark">BNB</option>
-                    </select>
+                    <ChainSelect
+                      classes="w-1/4 rounded-r-md"
+                      selectId="send"
+                      selectName="send"
+                    />
                   </div>
                 </div>
                 {/* You receive section */}
@@ -135,17 +108,11 @@ const Swap = () => {
                         <span className="text-xs text-gray-300">MAX</span>
                       </div>
                     </div>
-                    <select
-                      id="sender"
-                      name="sender"
-                      className="common-select w-1/4 rounded-r-md"
-                    >
-                      <option className="bg-wagpay-dark">USDC</option>
-                      <option className="bg-wagpay-dark">Polygon</option>
-                      <option className="bg-wagpay-dark">Ethereum</option>
-                      <option className="bg-wagpay-dark">Avalanche</option>
-                      <option className="bg-wagpay-dark">BNB</option>
-                    </select>
+                    <ChainSelect
+                      classes="w-1/4 rounded-r-md"
+                      selectId="receive"
+                      selectName="receive"
+                    />
                   </div>
                 </div>
                 <div className="col-span-7 mt-1 flex items-center justify-between sm:mt-6">
