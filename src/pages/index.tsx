@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Navbar from '@/components/Navbar';
@@ -17,7 +18,7 @@ const Index = () => {
     >
       <Navbar />
       <Hero>
-        <main className="relative h-fit pt-24 pb-12 lg:mb-0">
+        <main className="relative h-fit pt-24 pb-20 sm:pb-0 lg:mb-0">
           <div className="mx-auto max-w-7xl">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8">
               <div className="flex flex-col items-center justify-center space-y-8 sm:px-6 sm:text-center md:mx-auto md:max-w-5xl md:items-start lg:col-span-6 lg:flex lg:items-center lg:text-left">
@@ -48,7 +49,16 @@ const Index = () => {
               </div>
               <div className="mt-16 w-full sm:mt-24 lg:col-span-6 lg:mt-0">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg">
-                  <img src="/images/group.svg" alt="" />
+                  <Image
+                    src="/images/group.svg"
+                    alt="landing_page_image"
+                    priority
+                    width={520}
+                    height={520}
+                    placeholder="blur"
+                    blurDataURL="/images/group.svg"
+                    layout="responsive"
+                  />
                 </div>
               </div>
             </div>
