@@ -1,6 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import React, { useState } from 'react';
 
+import BridgeBar from '@/components/bridgeBar';
 import ChainSelect from '@/components/ChainSelect';
 import Navbar2 from '@/components/Navbar2';
 import { Hero } from '@/layouts/Hero';
@@ -20,8 +21,14 @@ const Swap = () => {
     >
       <Navbar2 />
       <Hero>
-        <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-          <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md lg:mt-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-12 py-12">
+          <div
+            className={
+              toggle === false
+                ? `col-span-12 mt-4 sm:mx-auto sm:w-full sm:max-w-md lg:col-span-6 lg:mt-12`
+                : `col-span-12 mt-4 sm:mx-auto sm:w-full sm:max-w-md lg:mt-12`
+            }
+          >
             <div className="mx-4 rounded-lg bg-wagpay-dark py-8 px-4 shadow sm:px-6">
               {/* card starts here */}
               <div className="grid grid-cols-7 place-content-center gap-y-6 sm:grid-cols-7 sm:gap-y-0 sm:gap-x-2">
@@ -146,35 +153,37 @@ const Swap = () => {
                   </div>
                 </div>
                 {/* priority section */}
-                <div className="col-span-7 mt-1 sm:mt-3 md:mt-6">
-                  <span className="text-base text-gray-200">
-                    Give priority to :
-                  </span>
-                  <div className="mt-4 flex space-x-6">
-                    <div>
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="radio-buttons"
-                          className="form-radio"
-                        />
-                        <span className="ml-2 text-sm text-white">
-                          Gas Fees
-                        </span>
-                      </label>
-                    </div>
-                    <div>
-                      <label className="flex items-center">
-                        <input
-                          type="radio"
-                          name="radio-buttons"
-                          className="form-radio"
-                        />
-                        <span className="ml-2 text-sm text-white">Time</span>
-                      </label>
+                {toggle === true && (
+                  <div className="col-span-7 mt-1 sm:mt-3 md:mt-6">
+                    <span className="text-base text-gray-200">
+                      Give priority to :
+                    </span>
+                    <div className="mt-4 flex space-x-6">
+                      <div>
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="radio-buttons"
+                            className="form-radio"
+                          />
+                          <span className="ml-2 text-sm text-white">
+                            Gas Fees
+                          </span>
+                        </label>
+                      </div>
+                      <div>
+                        <label className="flex items-center">
+                          <input
+                            type="radio"
+                            name="radio-buttons"
+                            className="form-radio"
+                          />
+                          <span className="ml-2 text-sm text-white">Time</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 {/* priority end */}
                 {/* connect wallet button */}
                 <ConnectButton.Custom>
@@ -241,6 +250,24 @@ const Swap = () => {
               </div>
             </div>
           </div>
+          {toggle === false && (
+            <div className="col-span-12 mt-12 mb-20 max-w-xl sm:mx-auto sm:w-full md:max-w-3xl lg:col-span-6 lg:mt-12">
+              <div className="flex w-full flex-col justify-center space-y-12 xl:items-start">
+                {/* single option */}
+                <BridgeBar
+                  bridgeName="Hyphen"
+                  fromToken="Polygon"
+                  toToken="Eth"
+                />
+                <BridgeBar
+                  bridgeName="Hyphen"
+                  fromToken="Polygon"
+                  toToken="Eth"
+                />
+                {/* single option end */}
+              </div>
+            </div>
+          )}
         </div>
       </Hero>
     </Main>

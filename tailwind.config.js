@@ -5,6 +5,9 @@ module.exports = {
       colors: {
         'wagpay-dark': '#1A202C',
       },
+      screens: {
+        mobile: '415px',
+      },
     },
   },
   plugins: [
