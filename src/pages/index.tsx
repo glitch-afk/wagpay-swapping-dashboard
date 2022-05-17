@@ -37,14 +37,18 @@ const Index = () => {
                   Helping you choose the best bridge for your swap
                 </div>
                 <div className="flex w-full items-center justify-center space-x-2 md:space-x-6 lg:justify-start">
-                  <Link href="/swap">
+                  <Link href="/">
                     <a className="rounded-full bg-wagpay-dark py-3 px-6 text-white drop-shadow-lg">
-                      Swap Here
+                      Coming Soon
                     </a>
                   </Link>
-                  <button className="rounded-full border border-wagpay-dark bg-white py-3 px-6 text-wagpay-dark drop-shadow-lg">
-                    Download Extension
-                  </button>
+                  {/* add waitlist form url here */}
+                  <a
+                    className="rounded-full border border-wagpay-dark bg-white py-3 px-6 text-wagpay-dark drop-shadow-lg"
+                    href="#"
+                  >
+                    Join waitlist
+                  </a>
                 </div>
               </div>
               <div className="mt-16 w-full sm:mt-24 lg:col-span-6 lg:mt-0">

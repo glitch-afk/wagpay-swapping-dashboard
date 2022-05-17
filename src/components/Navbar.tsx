@@ -32,19 +32,18 @@ const Navbar = () => {
             </div>
           </div>
           <div className="ml-10 space-x-4">
-            <Link href="/swap">
+            <Link href="/">
               <a className="inline-block rounded-full border border-transparent bg-gray-700 py-2 px-4 text-base font-medium text-white">
-                Swap Here
+                Coming Soon
               </a>
             </Link>
+            {/* add waitlist form url here */}
             <a
               href="#"
               className="hidden rounded-full border border-transparent bg-white py-2 px-4 text-base font-medium text-wagpay-dark hover:bg-indigo-50 md:inline-block"
             >
-              <span className="hidden md:inline lg:hidden">
-                Download Extension
-              </span>
-              <span className="hidden lg:inline">Download Extension</span>
+              <span className="hidden md:inline lg:hidden">Join waitlist</span>
+              <span className="hidden lg:inline">Join waitlist</span>
             </a>
           </div>
         </div>
