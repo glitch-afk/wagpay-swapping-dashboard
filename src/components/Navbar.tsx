@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 
 const navigation = [
-  { name: 'How we do it', href: '#' },
-  { name: 'About us', href: '#' },
-  { name: 'Community', href: '#' },
+  { name: 'Developers', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Contact Us', href: '#' },
 ];
 
 const Navbar = () => {
@@ -12,14 +12,14 @@ const Navbar = () => {
     <header className="bg-wagpay-dark pb-4 lg:pb-0">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between border-b border-wagpay-dark py-6 lg:border-none">
-          <div className="flex items-center">
+          <div className="flex w-full items-center justify-between">
             <Link href="/">
               <a>
                 <span className="sr-only">Wagpay</span>
                 <h2 className="text-3xl font-bold text-white">Wagpay.</h2>
               </a>
             </Link>
-            <div className="ml-10 hidden space-x-8 lg:block">
+            <div className="ml-10 hidden space-x-8 md:block">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -30,25 +30,32 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-          </div>
-          <div className="ml-10 space-x-4">
-            <Link href="/">
-              <a className="inline-block rounded-full border border-transparent bg-gray-700 py-2 px-4 text-base font-medium text-white">
-                Coming Soon
-              </a>
-            </Link>
-            {/* add waitlist form url here */}
-            <a
-              href="#"
-              className="hidden rounded-full border border-transparent bg-white py-2 px-4 text-base font-medium text-wagpay-dark hover:bg-indigo-50 md:inline-block"
-            >
-              <span className="hidden md:inline lg:hidden">Join waitlist</span>
-              <span className="hidden lg:inline">Join waitlist</span>
-            </a>
+            <div className="ml-10 space-x-4">
+              <Link href="/">
+                <a className="flex items-center rounded-full border border-transparent bg-wagpay-primary py-2 px-4 text-sm font-medium text-white">
+                  <span>Open App</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    width="24"
+                    height="24"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z"
+                    ></path>
+                  </svg>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="h-[1px] w-full bg-gray-500 lg:hidden" />
-        <div className="mt-4 flex justify-center space-x-6 lg:hidden">
+        <div className="h-[1px] w-full bg-gray-500 md:hidden" />
+        <div className="mt-4 flex justify-center space-x-6 md:hidden">
           {navigation.map((item) => (
             <a
               key={item.name}
