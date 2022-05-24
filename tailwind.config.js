@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'wagpay-dark': '#1A202C',
+        'wagpay-dark': '#191919',
+        'wagpay-primary': '#FF633B',
       },
       screens: {
         mobile: '415px',
